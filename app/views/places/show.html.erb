@@ -119,13 +119,13 @@
         <div class="modal-body">
           <%= f.input :picture %>
           <%= f.input :caption %>
-          <%= f.submit "Add a Caption", class: 'btn btn-primary' %>
-          <% @place.photos.each do |photo| %> <% end %>
+
         </div>
-      <% end %>
+      
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
           <%= f.submit "Add a picture", class: 'btn btn-primary' %>
+          <% end %>
         </div>
     </div>
   </div>
@@ -134,13 +134,19 @@
 <br>
 
 <div class="col-10 offset-1">
-  <!--<h1 class="float-left">Comments</h1>
+<h1 class="float-left">Photos</h1>
   <!-- Button trigger modal -->
   <button type="button" class="btn btn-primary btn-lg float-left" data-toggle="modal" data-target="#myModal">
     Add a picture
   </button>
 </div>
 
+<div class="clear"></div>
+
+<% @place.photos.each do |photo| %>
+    <%= image_tag 'photo-picture.url', class: 'image_fluid' %>
+    <%= photo.caption %>
+<% end %>
 
 
        
