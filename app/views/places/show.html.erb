@@ -144,7 +144,7 @@
 <div class="clear"></div>
 
 <% @place.photos.each do |photo| %>
-    <%= image_tag 'photo.picture.url', class: 'image_fluid' %>
+    <%= image_tag photo.picture.url, class: 'image_fluid' %>
     <%= photo.caption %>
 <% end %>
 
